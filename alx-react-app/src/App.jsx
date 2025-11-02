@@ -2,6 +2,7 @@ import WelcomeMessage from './components/WelcomeMessage'
 import Header from './components/Header'
 import MainContent from './components/MainContent'
 import Footer from './components/Footer'
+import UserProfile from './components/UserProfile'
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
@@ -33,13 +34,23 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
 
+      <div>
+        <UserProfile
+          name="Samuel Binogma"
+          age="22"
+          bio="Software developer passionate about creating 
+          intuitive user interfaces and solving complex problems.
+          Loves hiking and photography in spare time."
+        />
+      </div>
+
       <WelcomeMessage />
       <Header />
       <MainContent />
       <Footer />
     </>
 
-  )
-}
+  );
+};
 
 export default App
