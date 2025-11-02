@@ -36,8 +36,8 @@ function App() {
 
       <div>
         <UserProfile
-          name="Samuel Binogma"
-          age="22"
+          name="Alice"
+          age="25"
           bio="Software developer passionate about creating 
           intuitive user interfaces and solving complex problems.
           Loves hiking and photography in spare time."
