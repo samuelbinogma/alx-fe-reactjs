@@ -49,6 +49,7 @@ function App() {
       <Header />
       <MainContent />
       <Footer />
+      <Counter />
     </>
 
   );
