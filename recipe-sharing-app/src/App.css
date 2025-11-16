@@ -42,3 +42,43 @@ button:hover {
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
+
+.recipe-description {
+  white-space: pre-wrap;
+  line-height: 1.6;
+  font-size: 1.1rem;
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.back-link, .view-link {
+  color: #0066ff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.back-link:hover, .view-link:hover {
+  text-decoration: underline;
+}
+
+.delete-button {
+  background: #d32f2f;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background: #b71c1c;
+}
+
+.edit-recipe-form {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #eee;
+}

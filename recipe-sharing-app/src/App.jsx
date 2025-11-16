@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { create } from 'zustand';
 import RecipeList from './components/RecipeList';
 import AddRecipeForm from './components/AddRecipeForm';
+import { Routes, Route, Link } from 'react-router-dom';
+import RecipeDetails from './components/RecipeDetails';
 import './App.css'
 
 function App() {
@@ -9,12 +11,20 @@ function App() {
     <>
       <div className="app-container">
         <header>
-          <h1>Recipe Sharing App</h1>
+          <h1><Link to="/">Recipe Sharing App</Link></h1>
         </header>
 
         <main>
-          <AddRecipeForm />
-          <RecipeList />
+          <Routes>
+            <Route path="/" element={
+              <>
+                <AddRecipeForm />
+                <RecipeList />
+              </>
+            }/>
+
+            <Route path="/recipe/:id" element={<RecipeDetails />}/>
+          </Routes>
         </main>
       </div>
     </>
