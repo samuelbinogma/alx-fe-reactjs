@@ -4,6 +4,7 @@ import RecipeList from './components/RecipeList';
 import AddRecipeForm from './components/AddRecipeForm';
 import { Routes, Route, Link } from 'react-router-dom';
 import RecipeDetails from './components/RecipeDetails';
+import { BrowserRouter } from 'react-router-dom';
 import './App.css'
 
 function App() {
