@@ -2,6 +2,7 @@
 import { Link } from 'react-router-dom';
 import { useRecipeStore } from './recipeStore';
 import { useEffect } from 'react';
+import FavoriteButton from './FavoriteButton';
 
 export default function RecipeList() {
   const { filteredRecipes, searchTerm, selectedIngredients, maxPrepTime } =
@@ -37,6 +38,12 @@ export default function RecipeList() {
           <Link to={`/recipe/${r.id}`} className="link">
             View →
           </Link>
+            <div className="card-header">
+            <h3>
+                <Link to={`/recipe/${r.id}`}>{r.title}</Link>
+            </h3>
+            <FavoriteButton recipeId={r.id} />
+            </div>
         </div>
       ))}
     </div>

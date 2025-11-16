@@ -7,6 +7,8 @@ import RecipeDetails from './components/RecipeDetails';
 import { BrowserRouter } from 'react-router-dom';
 import SearchBar from './components/SearchBar';
 import Filters from './components/Filters';
+import FavoritesList from './components/FavoritesList';
+import RecommendationsList from './components/RecommendationsList';
 import './App.css'
 
 function App() {
@@ -24,7 +26,9 @@ function App() {
                 <SearchBar />
                 <Filters />
                 <AddRecipeForm />
+                <FavoritesList />
                 <RecipeList />
+                <RecommendationsList />
               </>
             }/>
 
