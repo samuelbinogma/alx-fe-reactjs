@@ -82,3 +82,68 @@ button:hover {
   padding-top: 2rem;
   border-top: 1px solid #eee;
 }
+
+.search-input {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.filters {
+  background: #f4f4f4;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.filter-group {
+  margin-bottom: 1rem;
+}
+
+.filter-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.filter-group input {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.tags {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  background: #0066ff;
+  color: white;
+  padding: 0.3rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tag button {
+  background: none;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.meta {
+  margin: 0.5rem 0;
+  color: #666;
+  font-size: 0.9rem;
+}

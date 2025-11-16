@@ -5,6 +5,8 @@ import AddRecipeForm from './components/AddRecipeForm';
 import { Routes, Route, Link } from 'react-router-dom';
 import RecipeDetails from './components/RecipeDetails';
 import { BrowserRouter } from 'react-router-dom';
+import SearchBar from './components/SearchBar';
+import Filters from './components/Filters';
 import './App.css'
 
 function App() {
@@ -19,6 +21,8 @@ function App() {
           <Routes>
             <Route path="/" element={
               <>
+                <SearchBar />
+                <Filters />
                 <AddRecipeForm />
                 <RecipeList />
               </>
