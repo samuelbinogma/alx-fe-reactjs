@@ -30,11 +30,11 @@ const RecipeDetails = () => {
       </div>
 
       <div className="actions">
-        <DeleteRecipeButton recipeId={recipeId} />
+        <DeleteRecipeButton recipeId={recipe.id} />
       </div>
 
       <h2 style={{ marginTop: '3rem' }}>Edit Recipe</h2>
-      <EditRecipeForm recipeId={recipeId} />
+      <EditRecipeForm recipeId={recipe.id} />
     </div>
   );
 };
