@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import SearchForm from './components/SearchForm'
+import Search from './components/Search'
 import UserCard from './components/UserCard'
 import UserList from './components/UserList'
 import LoadingSpinner from './components/LoadingSpinner'
