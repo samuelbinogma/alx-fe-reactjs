@@ -8,103 +8,32 @@ import LoadingSpinner from './components/LoadingSpinner'
 import { fetchUserData } from './services/githubService'
 import './App.css'
 
-function App() {
-  const [username, setUsername] = useState('');
-  const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (!username.trim()) return;
-
-    setLoading(true);
-    setError('');
-    setUser(null);
-
-    try {
-      const userData = await fetchUserData(username);
-      setUser(userData);
-    } catch (err) {
-      setError(err.message || 'Looks like we cant find the user');
-    } finally {
-      setLoading(false);
-    }
-  };
-
+export default function App() {
   return (
-    <>
-      <div className="App">
-      <header>
-        <h1>GitHub User Lookup</h1>
-        <p>Enter a GitHub username to view their profile</p>
+    <div className="min-h-screen bg-gray-100">
+      {/* Header */}
+      <header className="bg-indigo-600 text-white py-10 shadow-lg">
+        <div className="max-w-6xl mx-auto px-6 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
+            GitHub User Search
+          </h1>
+          <p className="mt-3 text-lg md:text-xl opacity-90">
+            Find GitHub users by username, location, or repository count
+          </p>
+        </div>
       </header>
 
-      <main>
-        {/* Search Form */}
-        <form onSubmit={handleSubmit}>
-          <div className="search-group">
-            <input
-              type="text"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              placeholder="e.g. mojombo, defunkt, torvalds"
-              autoFocus
-            />
-            <button type="submit" disabled={loading}>
-              {loading ? 'Searching...' : 'Search'}
-            </button>
-          </div>
-        </form>
-
-        {/* Loading State */}
-        {loading && (
-          <div className="loading">
-            <div className="spinner"></div>
-            <p>Loading...</p>
-          </div>
-        )}
-
-        {/* Error State */}
-        {error && !loading && (
-          <div className="error">
-            {error}
-          </div>
-        )}
-
-        {/* Success: User Found */}
-        {user && !loading && !error && (
-          <div className="user-card single">
-            <img src={user.avatar_url} alt={user.login} />
-            <div className="user-info">
-              <h2>{user.name || user.login}</h2>
-              <p className="login">@{user.login}</p>
-              {user.bio && <p className="bio">{user.bio}</p>}
-              <div className="details">
-                {user.location && <p>Location: {user.location}</p>}
-                {user.company && <p>Company: {user.company}</p>}
-                <p>Public Repos: {user.public_repos}</p>
-                <p>Followers: {user.followers} | Following: {user.following}</p>
-              </div>
-              <a
-                href={user.html_url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="profile-link"
-              >
-                View GitHub Profile
-              </a>
-            </div>
-          </div>
-        )}
+      {/* Main Content */}
+      <main className="py-12">
+        <Search />
       </main>
 
-      <footer>
-        <p>React + GitHub API</p>
+      {/* Footer */}
+      <footer className="bg-gray-800 text-gray-300 text-center py-6 mt-20">
+        <p className="text-sm">
+          Built with React • Vite • Tailwind CSS • GitHub API
+        </p>
       </footer>
     </div>
-    </>
-  )
+  );
 }
-
-export default App
