@@ -1,38 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import Search from './components/Search'
-import UserCard from './components/UserCard'
-import UserList from './components/UserList'
-import LoadingSpinner from './components/LoadingSpinner'
-import { fetchUserData } from './services/githubService'
-import './App.css'
+// src/App.jsx
+import Search from './components/Search';
+import './index.css';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-gray-100">
-      {/* Header */}
-      <header className="bg-indigo-600 text-white py-10 shadow-lg">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-            GitHub User Search
-          </h1>
-          <p className="mt-3 text-lg md:text-xl opacity-90">
-            Find GitHub users by username, location, or repository count
-          </p>
+    <div className="min-h-screen flex flex-col font-sans bg-gray-50">
+      <header className="bg-gradient-to-r from-gray-900 via-gray-800 to-black text-white py-16 shadow-2xl">
+        <div className="max-w-6xl mx-auto text-center px-6">
+          <h1 className="text-5xl md:text-6xl font-bold tracking-tight">GitHub User Search</h1>
+          <p className="mt-4 text-xl md:text-2xl opacity-90">Advanced search by location & repos</p>
         </div>
       </header>
 
-      {/* Main Content */}
-      <main className="py-12">
+      <main className="flex-1 py-12">
         <Search />
       </main>
 
-      {/* Footer */}
-      <footer className="bg-gray-800 text-gray-300 text-center py-6 mt-20">
-        <p className="text-sm">
-          Built with React • Vite • Tailwind CSS • GitHub API
-        </p>
+      <footer className="bg-gray-900 text-gray-400 text-center py-8 text-sm">
+        <p>React + Vite + Tailwind CSS + GitHub API</p>
       </footer>
     </div>
   );
