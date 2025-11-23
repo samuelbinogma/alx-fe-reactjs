@@ -195,3 +195,64 @@ footer {
   .user-card { flex-direction: column; text-align: center; }
   .user-card img { width: 100px; height: 100px; }
 }
+
+.user-card.single {
+  max-width: 600px;
+  margin: 3rem auto;
+  padding: 2rem;
+  text-align: center;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.user-card.single img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 6px solid #e1e4e8;
+  margin-bottom: 1.5rem;
+}
+
+.user-info h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #24292e;
+}
+
+.login {
+  font-size: 1.3rem;
+  color: #0366d6;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.bio {
+  font-size: 1.1rem;
+  color: #586069;
+  margin: 1.5rem 0;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.details p {
+  margin: 0.5rem 0;
+  color: #24292e;
+}
+
+.profile-link {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.8rem 2rem;
+  background: #d9e3ed;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.profile-link:hover {
+  background: #0550ae;
+  color: #ffffff;
+}
