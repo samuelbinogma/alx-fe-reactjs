@@ -88,140 +88,147 @@ const AddRecipeForm = ({ onAddRecipe }) => {
     };
 
     return (
-        <div className="max-w-2xl mx-auto px-4 py-8 sm:py-12">
-            <h1 className="text-3xl sm:text-4xl font-bold text-center text-gray-800 mb-10">
+        <div className="min-h-screen bg-gray-50 px-4 py-8 md:py-16">
+            <div className="max-w-3xl mx-auto">
+                <h1 className="text-3xl md:text-5xl font-bold text-center text-gray-800 mb-8 md:mb-12">
                 Share Your Recipe
-            </h1>
+                </h1>
 
-            <form onSubmit={handleSubmit} className="bg-white rounded-2xl shadow-xl p-6 sm:p-10 space-y-7">
-                {/* Title */}
-                <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
-                        Recipe Title <span className="text-red-500">*</span>
-                    </label>
-                    <input
-                        type="text"
-                        name="title"
-                        value={formData.title}
-                        onChange={handleChange}
-                        placeholder="e.g. Creamy Garlic Pasta"
-                        className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 transition ${
-                        errors.title ? 'border-red-500' : 'border-gray-300'
-                        }`}
-                    />
-                    {errors.title && <p className="mt-1 text-sm text-red-600">{errors.title}</p>}
-                </div>
-
-                {/* Image URL (optional) */}
-                <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
-                        Image URL <span className="text-gray-400 font-normal">(optional)</span>
-                    </label>
-                    <input
-                        type="url"
-                        name="imageUrl"
-                        value={formData.imageUrl}
-                        onChange={handleChange}
-                        placeholder="https://example.com/my-food.jpg"
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 transition"
-                    />
-                </div>
-
-            {/* Cooking Time & Servings */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <form
+                    onSubmit={handleSubmit}
+                    className="bg-white rounded-2xl shadow-2xl p-6 md:p-10 lg:p-12 space-y-8"
+                >
+                    {/* Title */}
                     <div>
-                        <label className="block text-sm font-semibold text-gray-700 mb-2">
-                            Cooking Time (minutes) <span className="text-red-500">*</span>
+                        <label className="block text-sm md:text-base font-semibold text-gray-700 mb-2">
+                        Recipe Title <span className="text-red-500">*</span>
                         </label>
                         <input
-                            type="number"
-                            name="cookingTime"
-                            value={formData.cookingTime}
+                            type="text"
+                            name="title"
+                            value={formData.title}
                             onChange={handleChange}
-                            min="1"
-                            placeholder="30"
-                            className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 transition ${
-                            errors.cookingTime ? 'border-red-500' : 'border-gray-300'
+                            placeholder="e.g. Creamy Garlic Pasta"
+                            className={`w-full px-4 py-3 md:py-4 text-base border rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 transition ${
+                            errors.title ? 'border-red-500' : 'border-gray-300'
                             }`}
                         />
-                        {errors.cookingTime && (
-                            <p className="mt-1 text-sm text-red-600">{errors.cookingTime}</p>
+                        {errors.title && <p className="mt-2 text-sm text-red-600">{errors.title}</p>}
+                    </div>
+
+                    {/* Image URL */}
+                    <div>
+                        <label className="block text-sm md:text-base font-semibold text-gray-700 mb-2">
+                        Image URL <span className="text-gray-400 font-normal">(optional)</span>
+                        </label>
+                        <input
+                            type="url"
+                            name="imageUrl"
+                            value={formData.imageUrl}
+                            onChange={handleChange}
+                            placeholder="https://example.com/food.jpg"
+                            className="w-full px-4 py-3 md:py-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 transition"
+                        />
+                    </div>
+
+                    {/* Cooking Time & Servings – responsive grid */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10">
+                        <div>
+                            <label className="block text-sm md:text-base font-semibold text-gray-700 mb-2">
+                                Cooking Time (minutes) <span className="text-red-500">*</span>
+                            </label>
+                            <input
+                                type="number"
+                                name="cookingTime"
+                                value={formData.cookingTime}
+                                onChange={handleChange}
+                                min="1"
+                                placeholder="30"
+                                className={`w-full px-4 py-3 md:py-4 border rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 transition ${
+                                errors.cookingTime ? 'border-red-500' : 'border-gray-300'
+                                }`}
+                            />
+                            {errors.cookingTime && (
+                                <p className="mt-2 text-sm text-red-600">{errors.cookingTime}</p>
+                            )}
+                        </div>
+
+                        <div>
+                            <label className="block text-sm md:text-base font-semibold text-gray-700 mb-2">
+                                Servings <span className="text-red-500">*</span>
+                            </label>
+                            <input
+                                type="number"
+                                name="servings"
+                                value={formData.servings}
+                                onChange={handleChange}
+                                min="1"
+                                placeholder="4"
+                                className={`w-full px-4 py-3 md:py-4 border rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 transition ${
+                                errors.servings ? 'border-red-500' : 'border-gray-300'
+                                }`}
+                            />
+                            {errors.servings && (
+                                <p className="mt-2 text-sm text-red-600">{errors.servings}</p>
+                            )}
+                        </div>
+                    </div>
+
+                    {/* Ingredients */}
+                    <div>
+                        <label className="block text-sm md:text-base font-semibold text-gray-700 mb-2">
+                        Ingredients <span className="text-red-500">*</span>
+                        <span className="block text-xs md:text-sm font-normal text-gray-500">
+                            One ingredient per line
+                        </span>
+                        </label>
+                        <textarea
+                            name="ingredients"
+                            value={formData.ingredients}
+                            onChange={handleChange}
+                            rows={7}
+                            placeholder="2 cups all-purpose flour&#10;1 tsp salt&#10;3 eggs..."
+                            className={`w-full px-4 py-3 md:py-4 text-base border rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 resize-none transition ${
+                                errors.ingredients ? 'border-red-500' : 'border-gray-300'
+                            }`}
+                        />
+                        {errors.ingredients && (
+                            <p className="mt-2 text-sm text-red-600">{errors.ingredients}</p>
                         )}
                     </div>
 
-                <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
-                        Servings <span className="text-red-500">*</span>
-                    </label>
-                    <input
-                        type="number"
-                        name="servings"
-                        value={formData.servings}
-                        onChange={handleChange}
-                        min="1"
-                        placeholder="4"
-                        className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 transition ${
-                            errors.servings ? 'border-red-500' : 'border-gray-300'
-                        }`}
-                    />
-                    {errors.servings && (
-                        <p className="mt-1 text-sm text-red-600">{errors.servings}</p>
-                    )}
-                </div>
-            </div>
+                    {/* Instructions */}
+                    <div>
+                        <label className="block text-sm md:text-base font-semibold text-gray-700 mb-2">
+                        Preparation Steps <span className="text-red-500">*</span>
+                        </label>
+                        <textarea
+                        name="instructions"
+                            value={formData.instructions}
+                            onChange={handleChange}
+                            rows={9}
+                            placeholder="1. Preheat oven...&#10;2. Mix ingredients...&#10;3. Bake for 25 minutes..."
+                            className={`w-full px-4 py-3 md:py-4 text-base border rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 resize-none transition ${
+                                errors.instructions ? 'border-red-500' : 'border-gray-300'
+                            }`}
+                        />
+                        {errors.instructions && (
+                            <p className="mt-2 text-sm text-red-600">{errors.instructions}</p>
+                        )}
+                    </div>
 
-            {/* Ingredients */}
-            <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Ingredients <span className="text-red-500">*</span>
-                    <span className="block text-xs font-normal text-gray-500">One ingredient per line</span>
-                </label>
-                <textarea
-                    name="ingredients"
-                    value={formData.ingredients}
-                    onChange={handleChange}
-                    rows={6}
-                    placeholder="2 cups all-purpose flour&#10;1 tsp salt&#10;3 large eggs&#10;1 tbsp olive oil"
-                    className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 resize-none transition ${
-                    errors.ingredients ? 'border-red-500' : 'border-gray-300'
-                    }`}
-                />
-                {errors.ingredients && (
-                    <p className="mt-1 text-sm text-red-600">{errors.ingredients}</p>
-                )}
+                    {/* Submit Button */}
+                    <div className="text-center pt-6">
+                        <button
+                            type="submit"
+                            className="w-full md:w-auto px-12 py-4 bg-orange-600 hover:bg-orange-700 text-white font-bold text-lg rounded-xl shadow-lg transition transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-orange-300"
+                        >
+                            Add Recipe
+                        </button>
+                    </div>
+                </form>
             </div>
-
-            {/* Instructions */}
-            <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Preparation Steps <span className="text-red-500">*</span>
-                </label>
-                <textarea
-                    name="instructions"
-                    value={formData.instructions}
-                    onChange={handleChange}
-                    rows={8}
-                    placeholder="1. Preheat the oven to 180°C...&#10;2. In a bowl, mix...&#10;3. Bake for 25-30 minutes..."
-                    className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 resize-none transition ${
-                    errors.instructions ? 'border-red-500' : 'border-gray-300'
-                    }`}
-                />
-                {errors.instructions && (
-                    <p className="mt-1 text-sm text-red-600">{errors.instructions}</p>
-                )}
-            </div>
-
-            {/* Submit */}
-            <div className="text-center pt-6">
-                <button
-                    type="submit"
-                    className="px-10 py-4 bg-orange-600 hover:bg-orange-700 text-white font-bold rounded-lg shadow-lg transition transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-orange-300"
-                >
-                    Add Recipe
-                </button>
-            </div>
-        </form>
-    </div>
+        </div>
     );
 };
 
