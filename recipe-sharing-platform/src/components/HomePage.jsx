@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import data from '../data.json';
+import { Link } from 'react-router-dom'
 
 function RecipeCard({ recipe }) {
     return (
@@ -13,7 +14,10 @@ function RecipeCard({ recipe }) {
                 <h3 className="text-xl font-bold text-gray-800 mb-2">{recipe.title}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{recipe.summary}</p>
                 <button className="mt-4 w-full bg-orange-500 text-white py-2 rounded-lg font-medium hover:bg-orange-600 transition">
-                View Recipe
+                    <Link to={`/recipe/${recipe.id}`} className="block w-full h-full">
+                        View Recipe
+                    </Link>
+                
                 </button>
             </div>
         </div>

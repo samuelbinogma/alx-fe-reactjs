@@ -3,36 +3,73 @@
         "id": 1,
         "title": "Spaghetti Carbonara",
         "summary": "A classic Italian pasta dish made with eggs, cheese, pancetta, and black pepper.",
-        "image": "https://images.unsplash.com/photo-1621996346565-e3dbc44ae2d5?w=400&h=300&fit=crop"
+        "image": "https://images.unsplash.com/photo-1621996346565-e3dbc44ae2d5?w=800",
+        "cookingTime": "20 minutes",
+        "servings": 4,
+        "ingredients": [
+        "400g spaghetti",
+        "200g pancetta or guanciale",
+        "4 large eggs",
+        "100g Pecorino Romano cheese",
+        "Freshly ground black pepper",
+        "Salt"
+        ],
+        "instructions": [
+        "Bring a large pot of salted water to boil and cook spaghetti until al dente.",
+        "Meanwhile, fry pancetta in a large pan until crispy.",
+        "In a bowl, beat eggs and mix with grated cheese and plenty of black pepper.",
+        "Reserve 1 cup pasta water, then drain spaghetti.",
+        "Remove pan from heat, add spaghetti to pancetta, then quickly pour in egg mixture.",
+        "Toss vigorously, adding pasta water if needed to create creamy sauce.",
+        "Serve immediately with extra cheese and pepper."
+        ]
     },
     {
         "id": 2,
         "title": "Chicken Tikka Masala",
         "summary": "Tender chicken in a rich, creamy, and mildly spiced tomato-based curry.",
-        "image": "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=400&h=300&fit=crop"
+        "image": "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=800",
+        "cookingTime": "45 minutes",
+        "servings": 6,
+        "ingredients": [
+        "1kg chicken thighs, boneless",
+        "200g yogurt",
+        "4 tbsp tikka spice mix",
+        "1 onion, finely chopped",
+        "400g tomato passata",
+        "200ml heavy cream",
+        "Fresh cilantro"
+        ],
+        "instructions": [
+        "Marinate chicken in yogurt and tikka spices for at least 1 hour.",
+        "Grill or pan-fry chicken until charred and cooked through.",
+        "Sauté onions, add garlic, ginger, and more spices.",
+        "Pour in tomato passata and simmer.",
+        "Add cooked chicken and cream, simmer 10 minutes.",
+        "Garnish with cilantro and serve with rice or naan."
+        ]
     },
     {
         "id": 3,
         "title": "Margherita Pizza",
         "summary": "Simple and classic pizza with fresh mozzarella, tomatoes, and basil.",
-        "image": "https://images.unsplash.com/photo-1604068549290-dea0e4a305ca?w=400&h=300&fit=crop"
-    },
-    {
-        "id": 4,
-        "title": "Chocolate Lava Cake",
-        "summary": "Warm chocolate cake with a gooey molten chocolate center.",
-        "image": "https://unsplash.com/photos/chocolate-cake-food-photography-recipe-idea-q4Uu76o06vU"
-    },
-    {
-        "id": 5,
-        "title": "Caesar Salad",
-        "summary": "Crisp romaine lettuce, parmesan, croutons, and creamy Caesar dressing.",
-        "image": "https://images.unsplash.com/photo-1551248429-40975aa4de74?w=400&h=300&fit=crop"
-    },
-    {
-        "id": 6,
-        "title": "Sushi Platter",
-        "summary": "Assorted fresh sushi rolls with salmon, tuna, and avocado.",
-        "image": "https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=400&h=300&fit=crop"
+        "image": "https://images.unsplash.com/photo-1604068549290-dea0e4a305ca?w=800",
+        "cookingTime": "30 minutes",
+        "servings": 2,
+        "ingredients": [
+            "Pizza dough",
+            "200g mozzarella",
+            "400g San Marzano tomatoes",
+            "Fresh basil leaves",
+            "Extra virgin olive oil",
+            "Salt"
+        ],
+        "instructions": [
+            "Preheat oven to highest temperature (250–300°C).",
+            "Roll out dough thinly.",
+            "Spread crushed tomatoes, add torn mozzarella.",
+            "Bake 8–12 minutes until crust is golden.",
+            "Top with fresh basil and drizzle olive oil."
+        ]
     }
 ]
