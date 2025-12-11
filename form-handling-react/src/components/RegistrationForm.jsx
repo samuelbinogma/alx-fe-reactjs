@@ -57,7 +57,7 @@ const RegistrationForm =() => {
 
         await new Promise(resolve => setTimeout(resolve, 1000));
 
-        console.log('Registration successful:', formData);
+        console.log('Registration successful:', { username, email, password });
         alert('Account created successfully!');
 
         setFormData({ username: '', email: '', password: '' });
@@ -85,7 +85,7 @@ const RegistrationForm =() => {
                                 type="text"
                                 id='username'
                                 name='username'
-                                value={formData.username}
+                                value={username}
                                 onChange={handleChange}
                                 className={`w-full px-4 py-3 rounded-lg border ${
                                     errors.username
@@ -117,7 +117,7 @@ const RegistrationForm =() => {
                                 type="text"
                                 id='email'
                                 name='email'
-                                value={formData.email}
+                                value={email}
                                 onChange={handleChange}
                                 className={`w-full px-4 py-3 rounded-lg border ${
                                     errors.email
@@ -148,7 +148,7 @@ const RegistrationForm =() => {
                                 type="password"
                                 id='password'
                                 name='password'
-                                value={formData.password}
+                                value={password}
                                 onChange={handleChange}
                                 className={`w-full px-4 py-3 rounded-lg border ${
                                     errors.password
