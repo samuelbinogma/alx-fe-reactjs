@@ -231,11 +231,16 @@ const RegistrationForm = () => {
         e.preventDefault();
     
         const newErrors = {};
-        if (!username.trim()) newErrors.username = 'Username is required';
-        if (!email.trim()) newErrors.email = 'Email is required';
-        else if (!/^\S+@\S+\.\S+$/.test(email)) newErrors.email = 'Invalid email';
-        if (!password) newErrors.password = 'Password is required';
-        else if (password.length < 6) newErrors.password = 'Password too short';
+        if (!username) newErrors.username = 'Username is required';
+        if (!email) newErrors.email = 'Email is required';
+        if (!password) newErrors.password = 'Password is required'
+
+        if (email && !/^\S+@\S+\.\S+$/.test(email)) {
+            newErrors.email = 'Please enter a valid email';
+        }
+        if (password && password.length < 6) {
+            newErrors.password = 'Password must be at least 6 characters';
+        }
 
         if (Object.keys(newErrors).length > 0) {
             setErrors(newErrors);
