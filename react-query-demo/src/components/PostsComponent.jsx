@@ -1,5 +1,12 @@
 import { useQuery } from 'react-query';
 
+const fetchPosts = async () => {
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+    if (!response.ok) {
+        throw new Error('Network response was not okay');
+    }
+        return response.json();
+}
 function PostsComponent() {
     const {
         data: posts,
@@ -8,11 +15,7 @@ function PostsComponent() {
         error,
         refetch,
         isFetching,
-    } = useQuery('posts', async () => {
-        const response = await fetch('https://jsonplaceholder.typicode.com/posts');
-        if (!response.ok) throw new Error('Network response was not okay');
-        return response.json();
-    });
+    } = useQuery('posts', fetchPosts);
 
     return (
         <div>
