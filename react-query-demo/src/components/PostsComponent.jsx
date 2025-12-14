@@ -15,7 +15,12 @@ function PostsComponent() {
         error,
         refetch,
         isFetching,
-    } = useQuery('posts', fetchPosts);
+    } = useQuery('posts', fetchPosts, {
+        staleTime: 1000 * 60 * 5,
+        cacheTime: 1000 * 60 * 10,
+        refetchOnWindowFocus: true,
+        keepPreviousData: true,
+    });
 
     return (
         <div>
