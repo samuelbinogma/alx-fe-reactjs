@@ -68,13 +68,8 @@ function App() {
               <Profile />
             </ProtectedRoute>
           }
-        >
-          <Route index element={<ProfileOverview />} />
-
-          <Route path='details' element={<ProfileDetails />} />
-          <Route path='settings' element={<ProfileSettings />} />
-        </Route>
-
+        />
+        
         <Route path="/blog/:postId" element={<BlogPost />} />
 
         <Route path='*' element={<NotFound />}/>

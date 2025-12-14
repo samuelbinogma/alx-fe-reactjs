@@ -1,4 +1,7 @@
-import { Outlet, Link } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom';
+import ProfileDetails from './ProfileDetails';
+import ProfileSettings from './ProfileSettings';
+import ProfileOverview from './ProfileOverview';
 
 export default function Profile() {
     return (
@@ -13,7 +16,14 @@ export default function Profile() {
                 </div>
 
                 <div className="profile-content">
-                    <Outlet />
+                    <Routes>
+                        <Route index element={<ProfileOverview />} />
+
+                        <Route path="details" element={<ProfileDetails />} />
+                        <Route path="settings" element={<ProfileSettings />} />
+
+                        <Route path="*" element={<ProfileOverview />} />
+                    </Routes>
                 </div>
             </div>
         </div>
