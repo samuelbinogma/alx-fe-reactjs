@@ -8,9 +8,9 @@ import ProfileSettings from './components/ProfileSettings';
 import BlogPost from './components/BlogPost';
 import NotFound from './components/NotFound';
 import { AuthContext } from './components/AuthContext';
-import { useState } from 'react';
 import './App.css'
 import './index.css'
+import ProfileOverview from './components/ProfileOverview';
 
 // Protected Route Wrapper
 function ProtectedRoute({ children }) {
@@ -18,24 +18,6 @@ function ProtectedRoute({ children }) {
     return isAuthenticated ? children : <Navigate to="/login" replace />;
 }
 
-// Layout for Profile (with nested routes)
-function ProfileLayout() {
-  return (
-    <div className='container'>
-      <div className='profile-section'>
-        <h2>Profile Section</h2>
-        <nav className='profile-nav'>
-          <a href="/profile">Overview</a> 
-          <a href="/profile/details">Details</a>
-          <a href="/profile/settings">Settings</a>
-        </nav>
-        <div className='profile-content'>
-          <Outlet />
-        </div>
-      </div>
-    </div>
-  );
-}
 
 // const router = createBrowserRouter([
 //   {
@@ -83,11 +65,12 @@ function App() {
           path='/profile'
           element={
             <ProtectedRoute>
-              <ProfileLayout />
+              <Profile />
             </ProtectedRoute>
           }
         >
-          <Route index element={<Profile />} />
+          <Route index element={<ProfileOverview />} />
+
           <Route path='details' element={<ProfileDetails />} />
           <Route path='settings' element={<ProfileSettings />} />
         </Route>
