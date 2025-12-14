@@ -1,10 +1,10 @@
 // src/components/ProtectedRoute.jsx
-import { useContext } from 'react';
+import { useAuth } from './useAuth';
 import { Navigate } from 'react-router-dom';
-import { AuthContext } from './AuthContext';
+
 
 export default function ProtectedRoute({ children }) {
-    const { isAuthenticated } = useContext(AuthContext);
+    const { isAuthenticated } = useAuth();
 
     // If not authenticated, redirect to login page
     if (!isAuthenticated) {
