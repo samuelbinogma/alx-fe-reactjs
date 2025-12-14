@@ -1,23 +1,15 @@
-import { Routes, Route, Navigate, Outlet } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { useContext } from 'react';
 import Home from './components/Home';
 import Login from './components/Login';
 import Profile from './components/Profile';
-import ProfileDetails from './components/ProfileDetails';
-import ProfileSettings from './components/ProfileSettings';
 import BlogPost from './components/BlogPost';
 import NotFound from './components/NotFound';
 import { AuthContext } from './components/AuthContext';
+import ProtectedRoute from './components/ProtectedRoute';
 import './App.css'
 import './index.css'
 import ProfileOverview from './components/ProfileOverview';
-
-// Protected Route Wrapper
-function ProtectedRoute({ children }) {
-    const { isAuthenticated } = useContext(AuthContext);
-    return isAuthenticated ? children : <Navigate to="/login" replace />;
-}
-
 
 // const router = createBrowserRouter([
 //   {
