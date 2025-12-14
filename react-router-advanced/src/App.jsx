@@ -70,7 +70,7 @@ function App() {
           }
         />
         
-        <Route path="/blog/:Id" element={<BlogPost />} />
+        <Route path="/blog/:id" element={<BlogPost />} />
 
         <Route path='*' element={<NotFound />}/>
       </Routes>
