@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider, Navigate, Outlet } from 'react-router-dom';
+import { Routes, Route, Navigate, Outlet } from 'react-router-dom';
 import { useContext } from 'react';
 import Home from './components/Home';
 import Login from './components/Login';
@@ -37,40 +37,66 @@ function ProfileLayout() {
   );
 }
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <Home />
-  },
-  {
-    path: '/login',
-    element: <Login />
-  },
-  {
-    path: '/profile',
-    element: (
-      <ProtectedRoute>\
-        <ProfileLayout />
-      </ProtectedRoute>
-    ),
-    children: [
-      { index: true, element: <Profile /> },
-      { path: 'details', element: <ProfileDetails /> },
-      { path: 'settings', element: <ProfileSettings /> },
-    ],
-  },
-  {
-    path: '/blog/:postId',
-    element: <BlogPost />,
-  },
-  {
-    path: '*',
-    element: <NotFound />
-  },
-]);
+// const router = createBrowserRouter([
+//   {
+//     path: '/',
+//     element: <Home />
+//   },
+//   {
+//     path: '/login',
+//     element: <Login />
+//   },
+//   {
+//     path: '/profile',
+//     element: (
+//       <ProtectedRoute>\
+//         <ProfileLayout />
+//       </ProtectedRoute>
+//     ),
+//     children: [
+//       { index: true, element: <Profile /> },
+//       { path: 'details', element: <ProfileDetails /> },
+//       { path: 'settings', element: <ProfileSettings /> },
+//     ],
+//   },
+//   {
+//     path: '/blog/:postId',
+//     element: <BlogPost />,
+//   },
+//   {
+//     path: '*',
+//     element: <NotFound />
+//   },
+// ]);
+
+// function App() {
+//   return <RouterProvider router={router} />;
+// }
 
 function App() {
-  return <RouterProvider router={router} />;
+  return(
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/login' element={<Login />} />
+
+        <Route
+          path='/profile'
+          element={
+            <ProtectedRoute>
+              <ProfileLayout />
+            </ProtectedRoute>
+          }
+        >
+          <Route index element={<Profile />} />
+          <Route path='details' element={<ProfileDetails />} />
+          <Route path='settings' element={<ProfileSettings />} />
+        </Route>
+
+        <Route path="/blog/:postId" element={<BlogPost />} />
+
+        <Route path='*' element={<NotFound />}/>
+      </Routes>
+  );
 }
 
 export default App
